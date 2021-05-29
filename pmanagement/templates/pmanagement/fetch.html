@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .btn-success{
+    margin-left:450px;
+}
+    p{
+    font-weight:500;
+    text-align:center;
+    }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="card">
+            <form method="post">
+                {% csrf_token %}
+            <div class="card-header">
+                <h3 style="text-align:center;">Fetch Patient Here!!</h3>
+            </div>
+            <div class="card-body">
+
+                    <div class="form-row form-group">
+                        <div class="col-sm-4 label-column">
+                            <label class="col-form-label" >Unique ID</label>
+                        </div>
+                        <div class="col-sm-6 input-column">
+                            <input class="form-control" type="text" name="UniqueID">
+                        </div>
+                    </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success btn-lg" type="submit">Fetch</button>
+            </div>
+           </form>
+
+            {%  if flag == 1 %}
+                <p>User Name : {{username}}</p>
+                <p>DOB : {{dob}}</p>
+                <p>Unique ID : {{id}}</p>
+            {% elif flag == 999 %}
+                <p>User doesn't exists</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

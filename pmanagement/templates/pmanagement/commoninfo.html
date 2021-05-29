@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>commoninfo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+
+</head>
+<body>
+<!--    CARD-->
+    <div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3 style="text-align:center;">Add or Fetch Patient</h3>
+        </div>
+
+        <div class="card-body">
+            <img class="card-img-top" src="{% static 'images/hospital2.jpg' %}" height="400px" alt="Card image cap">
+        </div>
+
+    <div class="card-footer">
+        <a class="btn btn-primary" href="{% url 'add' %}">Add Patient</a>
+        <a class="btn btn-success" href="{% url 'fetch' %}">Fetch Patient</a>
+    </div>
+    </div>
+    </div>
+
+</body>
+</html>

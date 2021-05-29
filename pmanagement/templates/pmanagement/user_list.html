@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 style="text-align:center">List of Patients</h2>
+        <table class="table table-striped table-border">
+            <thead class="table-header ">
+                <th>Unique ID</th>
+                <th>User Name</th>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>DOB</th>
+            </thead>
+            <tbody>
+            {% for p in plist %}
+                <tr class="table-row">
+                    <td>{{p.UniqueID}}</td>
+                    <td>{{p.UserName}}</td>
+                    <td>{{p.FullName}}</td>
+                    <td>{{p.Email}}</td>
+                    <td>{{p.DOB}}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

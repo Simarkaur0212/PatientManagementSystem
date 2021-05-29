@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>City Hospital</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    <h1 style="text-align:center;">Welcome to City Hospital!!</h1>
+    {%  if flag == 1 %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% elif flag == 999 %}
+        <p>Patient Can't be registered!</p>
+    {% endif %}
+    <img height="450px"  src="{% static 'images/hospital1.jpg' %}" class="d-block w-100" alt="...">
+    <p>Go to <em> <strong>/commoninfo</strong> </em>  for navigation.</p>
+    <p>Go to <em> <strong>/commoninfo/add</strong> </em> to add new Patient.</p>
+    <p>Go to <em> <strong>/commoninfo/fetch</strong> </em> to check whether patient exists or not.</p>
+    <p>Go to <em> <strong>/commoninfo/list</strong> </em> to see the list of patients.</p>
+  <br><br>
+</body>
+</html>
